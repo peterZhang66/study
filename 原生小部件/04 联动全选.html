@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<script type="text/javascript">
+	window.onload = function () {
+		//上面的全选
+		var oAll = document.getElementsByTagName('input')[0];
+		var oDiv = document.getElementById('box');
+		var aInput = oDiv.getElementsByTagName('input');
+
+		// 单纯记录每种状态,代表选中的个数
+		var count = 0;
+		// 设置开关,开关代表全选(true) 和 不选(false)
+		var flag = false;
+
+		oAll.onclick = function () {
+			if (flag) {
+				for (var i = 0;i < aInput.length;i++) {
+					aInput[i].checked = false;
+				}
+				count = 0;
+				flag = false;
+			} else {
+				for (var i = 0;i < aInput.length;i++) {
+					aInput[i].checked = true;
+				}
+				count = aInput.length;
+				flag = true;
+			}
+			// flag = !flag;
+		}
+
+		//给每个checkbox加点击事件
+		for (var i = 0;i < aInput.length;i++) {
+			aInput[i].onclick = function () {
+				// 在循环里面添加事件的时候,不要使用i,i值已经超出集合范围了
+				if (this.checked) {
+					count++;
+				} else {
+					count--;
+				}
+				console.log(count);
+				if (count == aInput.length) {
+					//全选的时候
+					oAll.checked = true;
+					flag = true;
+				} else {
+					oAll.checked = false;
+					flag = false;
+				}
+			}
+		}
+
+	}
+	</script>
+</head>
+<body>
+	<input type="checkbox">
+	<hr />
+	<div id="box">
+		<input type="checkbox">
+		<input type="checkbox">
+		<input type="checkbox">
+		<input type="checkbox">
+		<input type="checkbox">
+		<input type="checkbox">
+	</div>
+</body>
+</html>

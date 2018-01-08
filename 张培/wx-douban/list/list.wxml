@@ -1,0 +1,13 @@
+<view class="listItem">
+<!--视图结构  -->
+  <image></image>
+  <view class="conTxt">
+    <view class="title"></view>
+    <view class="star"></view>
+    <view class="author"></view>
+    <text class="yanyuan"></text>
+  </view>
+  <view class="rightBtn">
+  
+  </view>
+</view>

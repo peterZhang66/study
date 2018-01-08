@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		div {
+			width: 200px;
+			height: 200px;
+			background-color: red;
+			position: absolute;
+			left: 0;
+			top: 0;
+			cursor: move;
+		}
+	</style>
+	<script src="common.js"></script>
+	<script>
+	ready(function(){
+		var oDiv = document.getElementsByTagName('div')[0];
+		var disX = 0;
+		var disY = 0;
+		if(getCookie('oDiv1')){
+			oDiv.style.left = getCookie('oDiv1') + 'px';
+		}
+		if(getCookie('oDiv2')){
+			remove('oDiv1');
+			oDiv.style.top = getCookie('oDiv2') + 'px';
+		}
+		console.log(oDiv.style.top);
+		addEvent(oDiv,'mousedown',isDown)
+		function isDown(evt){	
+			evt = evt || window.event;
+			remove('oDiv2');
+			var x1 = evt.pageX - oDiv.offsetLeft;
+			var x2 = evt.pageY - oDiv.offsetTop;
+			document.onmousemove =function(evt){
+				evt = evt || window.event;
+				disX = evt.pageX - x1;
+				disY = evt.pageY - x2;
+				oDiv.style.left = disX + 'px';
+				oDiv.style.top = disY + 'px';
+				console.log(oDiv.style.top);
+			return false;
+			evt.preventDefault && evt.preventDefault();
+			}
+		};
+		addEvent(document,'mouseup',function(){
+			setCookie('oDiv1',disX,7);
+			setCookie('oDiv2',disY,7);
+			document.onmousemove = null;
+		});
+	})
+	</script>
+</head>
+<body>
+	哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈
+	<div></div>
+</body>
+</html>

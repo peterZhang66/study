@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		body {
+			background: #000;
+		}
+		img {
+			vertical-align: middle;
+		}
+		div {
+			font-size: 30px;
+			color: #fff;
+			margin: 0 auto;
+			width: 210px;
+		}
+	</style>
+	<script type="text/javascript">
+		// 补零函数
+	function addZero (n) {
+		return n < 10 ? '0'+n : n;
+	}
+
+	// function addZero (n) {
+	// 	if (n < 10) {
+	// 		return '0'+n;
+	// 	} else {
+	// 		return n;
+	// 	}
+	// }
+
+	window.onload = function () {
+		var aImg = document.getElementsByTagName('img');
+		// 先手动调用一次该函数
+		time();
+		setInterval(time,1000);
+		function time(){
+			var oDate = new Date();
+			var hour = oDate.getHours();
+			var minutes = oDate.getMinutes();
+			var seconds = oDate.getSeconds();
+			// 保存时间的格式 115330
+			var time = ''+addZero(hour)+addZero(minutes)+addZero(seconds);
+			console.log(time);
+
+			for (var i = 0;i < aImg.length;i++) {
+				aImg[i].src = 'img/'+time.charAt(i)+'.png';
+			}
+		}
+	}
+	</script>
+</head>
+<body>
+	<div>
+		<img src="img/0.png" height="37" width="25">
+		<img src="img/0.png" height="37" width="25">:
+		<img src="img/0.png" height="37" width="25">
+		<img src="img/0.png" height="37" width="25">:
+		<img src="img/0.png" height="37" width="25">
+		<img src="img/0.png" height="37" width="25">
+	</div>
+</body>
+</html>

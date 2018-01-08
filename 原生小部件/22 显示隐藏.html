@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+		div {
+			width: 200px;
+			height: 200px;
+			background-color: red;
+		}
+	</style>
+</head>
+<body>
+<!-- 播放按钮: 暂停  播放 -->
+	<button>隐藏</button>
+	<div></div>
+</body>
+</html>
+<script type="text/javascript">
+	var oBtn = document.getElementsByTagName('button')[0];
+	var oDiv = document.getElementsByTagName('div')[0];
+	//开关: 两种状态
+	var flag = true; //flag是true,代表是显示;flag是false,代表隐藏
+	oBtn.onclick = function () {
+		//  如果隐藏 --> 点击 --> 显示
+		//  如果显示 --> 点击 --> 隐藏
+		// 显示
+		if (flag == true) {
+			//隐藏
+			oDiv.style.display = 'none';
+			flag = false;
+			oBtn.innerHTML = '显示';
+		} else { // 条件: 隐藏状态下
+			//显示
+			oDiv.style.display = 'block';
+			flag = true;
+			oBtn.innerHTML = '隐藏';
+		}
+	}
+</script>

@@ -1,0 +1,13 @@
+<!--pages/swiper.wxml-->
+
+<swiper indicator-dots="{{indicatorDots}}"
+  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" style="height:100%" bindchange="showBtn">
+  <block wx:for="{{imgUrls}}" style="height:100%" >
+    <swiper-item style="height:100%">
+      <image src="{{item.images.large}}" class="slide-image" width="355" >
+
+        <navigator class="enter_btn" wx:if="{{isShow}}" bindtap="enter" open-type="switchTab" url="../index/index">点击进入</navigator>
+      </image>
+    </swiper-item>
+  </block>
+</swiper>

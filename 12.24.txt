@@ -1,0 +1,2 @@
+1.swiper的init（）和slideTo()结合使用，解决定位首页面索引问题。
+2.jq中的dom操作。

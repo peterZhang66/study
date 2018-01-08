@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+		table {
+			width: 1200px;
+			height: 420px;
+			/* collapse: 折叠 */
+			border-collapse: collapse;
+			margin: 0 auto;
+		}
+		table,tr,td {
+			border: 1px solid #ccc;
+			position: relative;
+		}
+		
+		td img {
+			margin: 0 auto;
+			display: block;
+			transition: 1s ease all;
+		}
+		td .img2 {
+			height: 0;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			margin-left: -75px;
+			margin-top: -50px;
+		}
+		td:hover .img2 {
+			height: 100px;
+		}
+		td:hover .img1 {
+			height: 0;
+		}
+	</style>
+</head>
+<body>
+	<table>
+		<tr>
+			<td><img src="images/shishiwei.jpg" class="img1"><img src="images/shiwei.jpg" class="img2"></td>
+			<td><img src="images/shishiwei.jpg"></td>
+			<td><img src="images/shishiwei.jpg"></td>
+			<td><img src="images/shishiwei.jpg"></td>
+			<td><img src="images/shishiwei.jpg"></td>
+		</tr>
+		<tr>
+			<td><img src="images/shishiwei.jpg"></td>
+			<td><img src="images/shishiwei.jpg"></td>
+			<td><img src="images/shishiwei.jpg"></td>
+			<td><img src="images/shishiwei.jpg"></td>
+			<td><img src="images/shishiwei.jpg"></td>
+		</tr>
+		<tr>
+			<td><img src="images/shishiwei.jpg"></td>
+			<td><img src="images/shishiwei.jpg"></td>
+			<td><img src="images/shishiwei.jpg"></td>
+			<td><img src="images/shishiwei.jpg"></td>
+			<td><img src="images/shishiwei.jpg"></td>
+		</tr>
+	</table>
+</body>
+</html>

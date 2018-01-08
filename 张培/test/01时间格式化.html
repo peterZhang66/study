@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="01时间格式化.js"></script>
+	<script>
+	console.log(formatTime(new Date()))
+	console.log(Date.now())
+	console.log(new Date().getTime())
+	var minute = 1000 * 60;
+	var hour = minute * 60;
+	var day = hour * 24;
+	var minute = 1000 * 60;
+	var hour = minute * 60;
+	var day = hour * 24;
+	date = new Date("1/1/2001");
+	var time = date.getTime();
+	document.write(Math.round(time / day) + " days from 1/1/1970 to 1/1/2001");
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

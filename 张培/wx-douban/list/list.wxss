@@ -1,0 +1,5 @@
+/* list/list.wxss */
+.listItem{height: 285rpx;width:100%;padding:30rpx;box-sizing: border-box;display: flex}
+.listItem image{width:160rpx;height:225rpx;}
+.listItem .conTxt{width: 410rpx;padding-left: 30rpx;}
+/* .listItem */

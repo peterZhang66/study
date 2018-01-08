@@ -1,0 +1,65 @@
+rem: 以根元素的font-size作为参考 ()
+
+转rem的插件: cssrem
+
+插件都得通过 package control 来安装
+1.安装package control(ctrl + shift+p --> Install)
+2.安装好以后,就可以安装你想要的插件了 (ctrl+shift+p);先百度插件的功能,然后再进行点击安装
+
+https://www.cnblogs.com/falling-maple/p/6231342.html?utm_source=itdadao&utm_medium=referral
+
+响应式布局(媒体查询): 当浏览器窗口改变的时候,也能对应的显示出对应的样式
+	原理: 在css里面写if语句
+	目的: 一套代码可以在任何地方使用
+	只适合网页结构简洁的网站
+
+@media (条件) {
+	满足该条件的样式
+} 
+
+width: 屏幕宽
+min-width: 最小宽   >= 
+max-width: 最大宽   <=
+
+1000-1361: 一排显示12个
+
+800-1000: 一排显示6个
+
+600-800: 一排显示4个
+
+600以下: 一排显示2个
+
+先写大区间,再写小区间
+
+min-width: 600
+min-width: 800
+min-width: 1000
+
+@media (条件) and (条件) and(条件) and (条件) {
+	
+}
+
+外链写法:
+
+<link rel="stylesheet" type="text/css" href="0.css" media="条件">
+
+如何区分横竖屏?
+
+orientation: landscape(横屏) portrait(竖屏)
+
+响应式结合rem使用
+
+bootstrap框架: 栅格系统 , 全局样式,组件,插件,周三复习
+
+移动端的事件:
+onmouse --> ontouch
+
+touchstart: 开始触摸(手指放下)
+touchmove: 手机里面移动
+touchend: 结束触摸(手指抬起)
+
+得用DOM2级事件绑定:
+addEventListener()
+
+思考: 怎么确定左滑  右滑
+

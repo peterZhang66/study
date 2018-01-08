@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		#box {
+			width: 900px;
+			margin: 50px auto;
+		}
+		#small_box {
+			width: 350px;
+			height: 449px;
+			float: left;
+			position: relative;
+		}
+		#mask {
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 218.75px;
+			height:  218.811px;
+			background: yellow;
+			opacity: 0.5;
+			display: none;
+		}
+		#big_box {
+			width: 500px;
+			height: 500px;
+			border: 1px solid #ccc;
+			float: right;
+			overflow: hidden;
+			position: relative;
+			display: none;
+		}
+		#big_box img {
+			position: absolute;
+			left: 0px;
+			top: 0;
+		}
+	</style>
+	<script type="text/javascript" src="common.js"></script>
+	<script>
+	ready(function(){
+		var osmall_box = document.getElementById('small_box')
+		var oMask = document.getElementById('mask');
+		var oBgImg = document.getElementById('bgImg');
+		var obig_box = document.getElementById('big_box');
+		addEvent(osmall_box,'mouseenter',over);
+		function over(){
+			oMask.style.display = 'block';
+			obig_box.style.display = 'block'
+		}
+		addEvent(osmall_box,'mouseleave',over1);
+		function over1(){
+			oMask.style.display = '';
+			obig_box.style.display = ''
+		}
+		addEvent(osmall_box,'mousemove',move);
+		function move(evt){
+			evt = evt || window.event
+			var max1 = osmall_box.offsetHeight - oMask.offsetHeight; 
+			var max2 = osmall_box.offsetWidth - oMask.offsetWidth;
+			var x1 = evt.clientY - oMask.offsetHeight / 2 - osmall_box.offsetTop;
+			var x2 = evt.clientX - oMask.offsetWidth / 2 - osmall_box.offsetLeft;
+			if(x1 <= 0){
+				x1 = 0;
+			}
+			if(x1 >= max1){
+				x1 = max1;
+			}
+			if(x2 <= 0){
+				x2 = 0;
+			}
+			if(x2 >= max2){
+				x2 = max2;
+			}
+			oMask.style.top = x1 + 'px';
+			oMask.style.left = x2 + 'px';
+			var max3 = obig_box.offsetHeight - oBgImg.offsetHeight; 
+			var max4 = obig_box.offsetWidth - oBgImg.offsetWidth;
+			x3 = x1 * max3 / max1;
+			x4 = x2 * max4 / max2;
+			oBgImg.style.top = x3 + 'px';
+			oBgImg.style.left = x4 + 'px';
+		}
+	})
+	</script>
+</head>
+<body>
+	<div id="box">
+		<div id="small_box">
+			<img src="img/small(2).jpg" height="449" width="350">
+			<div id="mask"></div>
+		</div>
+		<div id="big_box">
+			<img src="img/big(2).jpg" height="1026" width="800" id="bgImg">
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+	* {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+	li {
+		width: 300px;
+		height: 300px;
+		border: 1px solid red;
+		margin: 50px;
+		float: left;
+	}
+	li img {
+		width: 100%;
+		height: 100%;
+	}
+	</style>
+	<script src="common.js"></script>
+	<script>
+		 
+		window.onload = window.onscroll = window.onresize = function(){
+			oImg = document.getElementsByTagName('img');
+			var x1 = document.documentElement.scrollTop || document.body.scrollTop;
+			var x2 = document.documentElement.clientHeight || document.body.clientHeight;
+			var x = x1 + x2;
+			for(var i = 0; i < oImg.length;i++){
+				if(getPos(oImg[i]).top <= x){
+				oImg[i].src = oImg[i].getAttribute('_src');
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<ul>
+		<li><img _src="img/b1.jpg"></li>
+		<li><img _src="img/b2.jpg"></li>
+		<li><img _src="img/b3.jpg"></li>
+		<li><img _src="img/b4.jpg"></li>
+		<li><img _src="img/b5.jpg"></li>
+		<li><img _src="img/b6.jpg"></li>
+		<li><img _src="img/b7.jpg"></li>
+		<li><img _src="img/b8.jpg"></li>
+		<li><img _src="img/b9.jpg"></li>
+		<li><img _src="img/b10.jpg"></li>
+	</ul>
+</body>
+</html>

@@ -1,0 +1,55 @@
+#box {
+  width: 300px;
+  height: 300px;
+  position: relative;
+  margin: 0 auto;
+  background: url(pan.jpg) no-repeat center;
+  background-size: 100%;
+}
+#box #hours {
+  width: 10px;
+  height: 80px;
+  background: #000000;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -5px;
+  margin-top: -80px;
+  border-radius: 50%;
+  transform-origin: bottom;
+}
+#box #minutes {
+  width: 8px;
+  height: 100px;
+  background: #000000;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -4px;
+  margin-top: -100px;
+  border-radius: 50%;
+  transform-origin: bottom;
+}
+#box #seconds {
+  width: 4px;
+  height: 120px;
+  background: #ff0000;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -2px;
+  margin-top: -120px;
+  border-radius: 50%;
+  transform-origin: bottom;
+}
+#box #cap {
+  width: 20px;
+  height: 20px;
+  background: radial-gradient(#cccccc, #000000);
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -10px;
+  margin-top: -10px;
+}

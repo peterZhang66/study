@@ -1,0 +1,16 @@
+<view wx:for="{{detail}}">
+    <view class="teacherDetail">
+  <image src='{{item.avatar}}'></image>
+  <text class="name">{{item.name}}</text>
+  <text class="detail">{{item.intro}}</text>
+</view>
+<ul class="comment" wx:for="{{item.comments}}">
+  <li>
+  <text class="username">{{item.cname}}  {{item.updateTime}}</text>
+  <text class="userComment">{{item.content}}</text>
+  </li>
+ 
+</ul>
+<view class="yuyueBtn">预约听课</view>
+</view>
+

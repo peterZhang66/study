@@ -1,0 +1,6 @@
+li {
+	width: calc(100% / 3);
+}
+div {
+	width: 250px;
+}

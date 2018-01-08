@@ -1,0 +1,36 @@
+﻿Swiper开始指南
+1. 在官网下载Swiper最新版资源。
+2. 在需要做效果的文件中嵌入必要的工程文件（CSS，JS）。 
+3. 拷贝需要的HTML标签部分的代码。
+4. 拷贝CSS部分的代码。（style标签内部的代码） 
+5. 改造CSS部分的代码。 
+6. 成功。
+
+Swiper动画指南
+1. 在官网下载Swiper 动画库的资源文件。
+2. 在需要做效果的文件中嵌入必要的工程文件（CSS，JS）。
+3. 在JS中初始化Animate插件。
+
+	onInit: function(swiper){
+           swiperAnimateCache(swiper);
+           swiperAnimate(swiper);
+    },
+    onSlideChangeEnd: function(swiper){
+            swiperAnimate(swiper);
+    }    
+
+ 
+
+常见动画: 
+1. zoomIn  
+2. fadeIn
+3. rotateInDownLeft
+4. bounceInDown
+5. fadeInUp
+6. bounce
+
+
+
+
+    <img src="img/bonus_01.png" id="a1" class="ani"  swiper-animate-effect="zoomIn" swiper-animate-duration="1.5s" swiper-animate-delay="0s" />
+    

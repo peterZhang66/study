@@ -1,0 +1,4 @@
+/* pages/swiper.wxss */
+.slide-image{width: 100%;height: 100%;position: relative}
+page{height: 100%}
+.enter_btn{width:260rpx;height:100rpx;line-height: 100rpx;text-align: center;position: absolute;bottom: 300rpx;left:244rpx;color: #fff;border:2px solid #35495e;border-radius: 5px;background: rgba(68,76,80,0.5)}

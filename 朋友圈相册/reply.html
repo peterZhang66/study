@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div class="item">
+			
+		</div>
+	</body>
+	<script>
+		var swiper = new Swiper('.swiper-container',{
+//			paginationClickable:true,
+		})
+		$('img').click(function () {
+			$('.swiper-wrapper').show();
+			//清空节点
+			$('.swiper-wrapper').html('');
+			//或$('.swiper-wrapper').empty();
+			var item = [
+				'<div class="item">',
+			
+				'</div>'
+			].push(
+				'<div class="item">',
+			
+				'</div>'
+			);
+			item.join('')
+//			div
+		})
+		//窗口加载、滚动、缩放触发
+		window.onload = window.onscroll = window.onresize = function () {
+			//获取到img图片
+			oImg = document.getElementsByTagName('img');
+			//滚动高度和课时去窗口高度
+			var x1 = document.documentElement.scrollTop || document.body.scrollTop;
+			var x2 = document.documentElement.clientHeight || document.body.clientHeight;
+			var x = x1 + x2;
+			//遍历每张图片比较顶部高度
+			for (var i =0;i<oImg.length;i++) {
+				if (getPos(oImg[i]).top <= x) {
+					oImg[i].src = oImg[i].getAttribute('_src');
+				}
+			}
+		}
+		function getPos(obj) {
+			var left = 0;top = 0;
+			while(obj){
+				left += obj.offsetLeft;
+				top ++ obj.offsetTop;
+				obj = obj.offsetParent;
+			}
+			return {
+				left:left;
+				top:top
+			}
+		};
+		
+	</script>
+</html>

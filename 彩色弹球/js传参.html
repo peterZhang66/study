@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		https://www.google.co.jp/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=%E5%8D%8E%E4%BC%81&*
+//获取地址栏中的参数
+function GetQueryString(name) {  
+    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");  
+    var r = window.location.search.substr(1).match(reg);  
+
+    if (r != null) {   
+        return unescape(r[2]);  
+    }  
+    return null;  
+}
+
+GetQueryString('sourceid')//chrome-instant
+	</script>
+</html>

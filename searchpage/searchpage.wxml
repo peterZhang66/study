@@ -1,0 +1,143 @@
+<!--pages/searchpage/searchpage.wxml-->
+<!-- 外层判断searchindex请删掉 -->
+<view wx:if='{{searchindex==0}}'>
+      
+            <view class='search-box'>
+                  <icon type='search'></icon>
+                  <input placeholder='城市' bindfocus='searchfocus' bindblur='searchblur'></input>
+                  <view wx:if='{{searchfocus}}' class='remove' bindtap='searchblur'>取消</view>
+            </view>
+
+      
+            <!-- 显示搜索列表时，隐藏其他内容  searchfocus为判断值-->
+            <view wx:if='{{searchfocus}}' class='search-content'>
+                  <view class='item' data-txt='北京' bindtap='BackTxt'>北京</view>
+                  <view class='item' data-txt='上海' bindtap='BackTxt'>上海</view>
+                  <view class='item' data-txt='天津' bindtap='BackTxt'>天津</view>
+            </view>
+            <view wx:else>
+                  <view class='thiscity'>
+                        <view class='title'>当前定位城市:</view>
+                        <view class='btn-c'>
+                              <view bindtap='BackTxt' class='search-btn' data-txt='{{city}}'>{{city}}                   </view>
+                        </view>
+                  </view>
+                  <view class='title'>更多城市:</view>
+                  <!-- 右侧按钮 -->
+                  <view class='right-btn' style='height:{{windowHeight-176}}px'>
+                        <view class='item' wx:for='{{SearchCity}}' bindtap='into' data-en='{{item.CityEn}}'>{{item.CityEn}}</view>
+                  </view>
+
+                  <scroll-view scroll-y scroll-with-animation style='height:{{windowHeight-176}}px' class='scroll-bg' scroll-into-view='{{into}}'>
+
+                        <!-- 主体内容 -->
+                        <view wx:for='{{SearchCity}}' id='{{item.CityEn}}'>
+                              <view class='tit'>{{item.CityEn}}</view>
+                              <view class='content'>
+                                    <view bindtap='BackTxt' class='btn' wx:for='{{item.City}}' data-txt='{{item.txt}}'>
+                                          <view class='text' id='item.id'>{{item.txt}}</view>
+                                    </view>
+                              </view>
+                        </view>
+
+                  </scroll-view>
+            </view>
+     
+
+
+
+
+
+
+</view>
+
+
+
+
+
+<view wx:if='{{searchindex==1}}'>
+     
+            <view class='search-box'>
+                  <icon type='search'></icon>
+                  <input placeholder='输入搜索内容' bindfocus='searchfocus' bindblur='searchblur'></input>
+                  <view wx:if='{{searchfocus}}' class='remove' bindtap='searchblur'>取消</view>
+            </view>
+            <!-- 显示搜索列表时，隐藏其他内容  searchfocus为判断值-->
+            <view  class='search-content'>
+                  <view class='item' data-txt='机构1'  bindtap='BackTxt2'>
+                              <image src='../img/shop-img.jpg' style='width:30px;height:30px' mode='center' data-txt='机构1'></image>
+                              <view style='flex:1;text-align:center;line-height:30px;font-size:11pt;' data-txt='机构1'>机构1</view>
+                              <view style='flex:1;text-align:center;line-height:30px;color:#999;' data-txt='机构1'>北京市</view>
+                  </view>
+                  <view class='item' data-txt='机构1' bindtap='BackTxt2'>
+                              <image src='../img/shop-img.jpg' style='width:30px;height:30px' mode='center' data-txt='机构1'></image>
+                              <view style='flex:1;text-align:center;line-height:30px;font-size:11pt;' data-txt='机构1'>机构1</view>
+                              <view style='flex:1;text-align:center;line-height:30px;color:#999;' data-txt='机构1'>北京市</view>
+                  </view>
+                  <view class='item' data-txt='机构1' bindtap='BackTxt2'>
+                              <image src='../img/shop-img.jpg' style='width:30px;height:30px' mode='center' bindtap='BackTxt2' data-txt='机构1'></image>
+                              <view style='flex:1;text-align:center;line-height:30px;font-size:11pt;' bindtap='BackTxt2' data-txt='机构1'>机构1</view>
+                              <view style='flex:1;text-align:center;line-height:30px;color:#999;' bindtap='BackTxt2' data-txt='机构1'>北京市</view>
+                  </view>
+                  
+            </view>
+</view>
+
+<view wx:if='{{searchindex==2}}'>
+     
+            <view class='search-box'>
+                  <icon type='search'></icon>
+                  <input placeholder='输入搜索内容' bindfocus='searchfocus' bindblur='searchblur'></input>
+                  <view wx:if='{{searchfocus}}' class='remove' bindtap='searchblur'>取消</view>
+            </view>
+            <!-- 显示搜索列表时，隐藏其他内容  searchfocus为判断值-->
+            <view  class='search-content'>
+                  <view class='item' data-txt='学生2'  bindtap='BackTxt3'>
+                              <image src='../img/shop-img.jpg' style='width:30px;height:30px' mode='center' data-txt='学生2'></image>
+                              <view style='flex:1;text-align:center;line-height:30px;font-size:11pt;' data-txt='学生2'>学生2</view>
+                              <view style='flex:1;text-align:center;line-height:30px;color:#999;' data-txt='学生2'>北京市</view>
+                  </view>
+                  <view class='item' data-txt='学生2' bindtap='BackTxt3'>
+                              <image src='../img/shop-img.jpg' style='width:30px;height:30px' mode='center' data-txt='学生2'></image>
+                              <view style='flex:1;text-align:center;line-height:30px;font-size:11pt;' data-txt='学生2'>学生2</view>
+                              <view style='flex:1;text-align:center;line-height:30px;color:#999;' data-txt='学生2'>北京市</view>
+                  </view>
+                  <view class='item' data-txt='学生2' bindtap='BackTxt3'>
+                              <image src='../img/shop-img.jpg' style='width:30px;height:30px' mode='center' bindtap='BackTxt3' data-txt='学生2'></image>
+                              <view style='flex:1;text-align:center;line-height:30px;font-size:11pt;' bindtap='BackTxt3' data-txt='学生2'>学生2</view>
+                              <view style='flex:1;text-align:center;line-height:30px;color:#999;' bindtap='BackTxt3' data-txt='学生2'>北京市</view>
+                  </view>
+                  
+            </view>
+</view>
+
+
+
+
+<view wx:if='{{searchindex==3}}'>
+     
+            <view class='search-box'>
+                  <icon type='search'></icon>
+                  <input placeholder='输入搜索内容' bindfocus='searchfocus' bindblur='searchblur'></input>
+                  <view wx:if='{{searchfocus}}' class='remove' bindtap='searchblur'>取消</view>
+            </view>
+            <!-- 显示搜索列表时，隐藏其他内容  searchfocus为判断值-->
+            <view  class='search-content'>
+                  <view class='item' data-txt='老师1'  bindtap='BackTxt4'>
+                              <image src='../img/shop-img.jpg' style='width:30px;height:30px' mode='center'></image>
+                              <view style='flex:1;text-align:center;line-height:30px;font-size:11pt;' >老师1</view>
+                              <view style='flex:1;text-align:center;line-height:30px;color:#999;' >北京市</view>
+                  </view>
+                  <view class='item' data-txt='老师1' bindtap='BackTxt4'>
+                              <image src='../img/shop-img.jpg' style='width:30px;height:30px' mode='center' ></image>
+                              <view style='flex:1;text-align:center;line-height:30px;font-size:11pt;' >老师1</view>
+                              <view style='flex:1;text-align:center;line-height:30px;color:#999;' >北京市</view>
+                  </view>
+                  <view class='item' data-txt='老师1' bindtap='BackTxt4'>
+                              <image src='../img/shop-img.jpg' style='width:30px;height:30px' mode='center'></image>
+                              <view style='flex:1;text-align:center;line-height:30px;font-size:11pt;' >老师1</view>
+                              <view style='flex:1;text-align:center;line-height:30px;color:#999;'  >北京市</view>
+                  </view>
+                  
+            </view>
+</view>

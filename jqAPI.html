@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+		var arr = [1,2,3];
+		Array.from(arr,function(v,i,a) {
+			// console.log(v,i,a)
+		})
+		var bb = arr.every(function (v,i,a) {
+			// console.log(v,i,a)
+			// return true
+		})
+		arr.forEach(function(v,i,a) {
+			// console.log(v,i,a)
+		})
+		var aa = arr.some(function(v,i,a) {
+			// console.log(v,i,a)
+			return false
+		})
+		arr.map(function(v,i,a) {
+			console.log(v,i)
+			// return false
+		})
+		console.log(aa,bb)
+		var obj = {
+			name:"zhangsan",
+		}
+		console.log(obj)
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

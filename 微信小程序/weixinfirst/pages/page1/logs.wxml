@@ -1,0 +1,12 @@
+<view>
+<map style="height:{{height}}px;width:100%" latitude="40.003050" longitude="116.277310" markers="{{markers}}" scale='18'></map>
+  <view class="footer">
+    <view class="footL">
+       <image src='../images/friends.png' class="img" bindtap='friends'></image> 
+    </view>
+    <view class="footC" bindtap='xueshu'>AAA学术圈</view>
+    <view class="footR">
+      <view bindtap='yuyue'>预约</view>
+    </view>
+  </view>
+</view>

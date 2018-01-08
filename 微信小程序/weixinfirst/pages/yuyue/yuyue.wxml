@@ -1,0 +1,29 @@
+<!--pages/yuyue/yuyue.wxml-->
+<view class="teacherImg">
+  <image src='../images/teacher.png'></image>
+</view>
+<ul class="chooseBox">
+  <li>
+  <view><image src='../images/map.png'></image></view>
+  <view class="section">
+  <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+    <view class="picker">
+      {{array[index]}}
+    </view>
+  </picker>
+</view>
+  </li>
+  <li>
+  <view><image src='../images/name.png'></image></view>
+    
+    <input placeholder='请输入姓名'/>
+  </li>
+  <li>
+  <view><image src='../images/phone.png'></image></view>
+    
+    <input placeholder='请输入手机号'/>
+  </li>
+</ul>
+<button  class="sendBtn" bindtap='sendBtn'>确认发送</button>
+<!-- <input type='button'/> -->
+

@@ -1,0 +1,56 @@
+1.公司开发微信小程序用私人账号吗?
+2. 组件样式修改问题？
+- 除了input
+3. 尺寸问题
+- 用ps缩放效果图590/750
+- image标签加等比例缩放属性
+4. 导航问题
+- 普通导航不要超过5个页面
+5. 弹性盒子布局问题flex
+- 上下左右居中一定要在所有父级中都写
+6. 协同问题？
+- 小到静态布局图片路径统一
+7.https怎么用？
+8.backgroundTextStyl  下拉背景字体、loading 图的样式，仅支持 dark/light
+9.只是设置 app.json 中的 window 配置项的内容
+10.flex兼容性问题
+- 移动兼容到 安卓4 ios7
+- 小程序完全不用兼容
+- 华为手机兼容有问题
+- PC端兼容性的问题，移动端配合autoprefixer可以让你玩得飞起了
+- 因为大家很少写新的framework啊. 多数情况:1. 是直接套用Bootstrap, Foundation等现成的framework. 2. Maintain 已经有的framework.至于兼容性, 那是原始开发人员考虑的, 后来的做的虾兵蟹将打打补丁就好了.
+
+作者：知乎用户
+链接：https://www.zhihu.com/question/56685652/answer/150577583
+来源：知乎
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+11.小程序事件传参??
+- data-*自定义属性-->e.currentTarget
+12. wepyjs 用于小程序中自定义开发组件
+13.一个页面中的双重tab切换滚动问题？
+- http://blog.csdn.net/qq_31383345/article/details/52900835
+- 上面写tab切换的是傻逼，直接更改数据重新渲染页面就好了。
+14.选项卡按需加载速度慢问题？
+- if判断&&图片懒加载
+15.小程序navigator url参数设置?
+- 传值:在navigator的属性url后拼接?id(参数名字)=要传递的值 (如果多个参数用&分开 &name=value&…….)
+- 取值：options 是包含url地址中参数的对象，可以直接 点 获取。
+16.js中传参
+https://www.google.co.jp/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=%E5%8D%8E%E4%BC%81&*
+//获取地址栏中的参数
+function GetQueryString(name) {  
+    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");  
+    var r = window.location.search.substr(1).match(reg);  
+
+    if (r != null) {   
+        return unescape(r[2]);  
+    }  
+    return null;  
+}
+
+17.本地资源无法通过 WXSS 获取?
+background-image：可以使用网络图片，或者 base64，或者使用<image/>标签
+GetQueryString('sourceid')//chrome-instant
+18.图片的inline-block会有留白。
+- vertical-align: middle;
+- display:block

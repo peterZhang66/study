@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li>111</li>
+		</ul>
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			/*一、删除节点
+			 * 1.
+			 * 2.
+			 */
+//			$('ul').remove();
+			$('ul').empty()
+			console.log($('ul').empty())
+		/*jq中offset().left*/
+		function getPos(obj) {
+			var left = 0;top = 0;
+			//while循环
+			while(obj) {
+				left += obj.offsetLeft;
+				top += obj.offsetTop;
+				obj = obj.offsetParent;
+			}
+		}
+		//图片懒加载
+		window.onload = window.onscroll = window.onresize = function () {
+//			获取图片
+			var aImg =document.getElemnetsByTagName('img');
+			//获取滚动高度和可视区高度
+			var x1 = document.documentElement.scrollTop || doucment.body.scrollTop;
+			var x2 = document.documentElement.clientHeight || document.body.clientHeight;
+			var x = x1 + x2;
+			for (var i = 0;i<aImg.length;i++) {
+				if (getPos(aImg[i]<= x)) {
+					aImg[i].src = 
+				}
+			}
+		}
+		</script>
+	</body>
+</html>

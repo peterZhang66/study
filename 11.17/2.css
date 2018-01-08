@@ -1,0 +1,22 @@
+* {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+		li {
+			height: 300px;
+			/*border: 1px solid red;*/
+			text-align: center;
+			line-height: 30px;
+			float: left;
+			width: calc(100% / 12);
+			box-sizing: border-box;
+			padding: 15px;
+		}
+		div {
+			
+			height: 200px;
+			background-color: #ccc;
+			margin: 0 auto;
+		}
+		

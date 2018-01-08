@@ -1,0 +1,68 @@
+body,h1,h2,h3,h4,h5,h6,p,ul,ol,dl,dd,input,button,input {
+		margin: 0;
+		padding: 0;
+	}
+	h1,h2,h3,h4,h5,h6,b,i,em,strong {
+		font-size: 16px;
+		font-style: normal;
+		font-weight: normal;
+		text-decoration: none;
+	}
+	ul,ol {
+		list-style: none;
+	}
+	img,input,select {
+		vertical-align: top;
+		outline:none;
+	}
+	button,input {
+		outline: none;
+	} 
+	button {
+		border: none;
+		background-color: #fff;
+	}
+	a {
+		color: #000;
+		text-decoration: none;
+	}
+	input {
+		outline: none;
+	}
+	/*清除最后的边线*/
+	.last-bottom {
+		border-bottom: none !important;
+	}
+	.last-right {
+		border-right: none !important;
+	}
+	/*浮动*/
+	.fl {
+		float: left;
+	}
+	.fr {
+		float: right;
+	}
+	/*清除浮动*/
+	.clearfix:after {
+		content: '';
+		display: block;
+		clear: both;
+	}
+	.clearfix {
+		zoom: 1;
+	}
+	/*父级元素相对定位*/
+	.position {
+		position: relative;
+	}
+	/*拖拽父级*/
+	.pullfather {
+		overflow: hidden;
+	}
+	/*省略号显示*/
+	.points {
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}

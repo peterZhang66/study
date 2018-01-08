@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+		ul {
+			width: 300px;
+			overflow: hidden;
+			margin: 0 auto;
+			background: #ccc;
+		}
+		ul li {
+			float: left;
+			margin: 10px;
+			/*margin-top: 10px;*/
+			width: 80px;
+			height: 80px;
+			background-color: pink;
+			position: relative;
+		}
+		ul li button {
+			width: 50px;
+			height: 50px;
+			background-color: orange;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			margin-left: -25px;
+			margin-top: -25px;
+			outline: none;
+		}
+	</style>
+	<script type="text/javascript">
+	window.onload = function () {
+		console.log('bb')
+		function bb(){};
+		var oUl = document.getElementsByTagName('ul')[0];
+		var aBtn = oUl.getElementsByTagName('button');
+		var oBtn = document.getElementsByTagName('button')[0];
+		var oH2 = document.getElementsByTagName('h2')[0];
+		// 打中一次记一分
+		var isSelect = false;
+		var num = 0;
+		for (var i = 0;i < aBtn.length;i++) {
+			aBtn[i].onclick = function (){
+				isSelect = true;
+				if (isSelect) {
+					num++;
+					oH2.innerHTML = num;
+				}
+			}
+			
+		}
+		var tid = null;
+		oBtn.onclick = function () {
+			//
+			clearInterval(tid);
+			tid = setInterval(function () {
+				isSelect = false;
+				// 先隐藏所有,再随机显示一个
+				for (var i = 0;i < aBtn.length;i++) {
+					aBtn[i].style.display = 'none';
+				}
+				// 显示一个
+				aBtn[random(0,aBtn.length)].style.display = 'block';
+			},1000);
+		}
+
+	}
+
+	function random (n,m) {
+		return parseInt(Math.random() * (m - n) + n);
+	}
+	</script>
+</head>
+<body>
+	<button>开始游戏</button>
+	<h2>得分: 0</h2>
+	<ul>
+		<li><button>老鼠</button></li>
+		<li><button>老鼠</button></li>
+		<li><button>老鼠</button></li>
+		<li><button>老鼠</button></li>
+		<li><button>老鼠</button></li>
+		<li><button>老鼠</button></li>
+		<li><button>老鼠</button></li>
+		<li><button>老鼠</button></li>
+		<li><button>老鼠</button></li>
+	</ul>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>元宵节</title>
+	<link rel="stylesheet" href="css/animate.min.css">
+	<link rel="stylesheet" href="css/swiper.min.css">
+	<!-- Demo styles -->
+    <style>
+    *{padding:0;margin:0;border:0;}
+    html, body {position:relative;height:100%}
+    .swiper-container,.swiper-wrapper {
+        width: 100%;
+        height: 100%;
+        background:url(images/banner1.jpg) no-repeat;
+        background-size: 100% 100%;
+    }
+    .swiper-slide{position:relative;}
+    .swiper-slide img{position:absolute;}
+    .down{animation:donghua 0.8s infinite;}
+    @keyframes donghua{
+		0%{opacity:0;};
+		100%{opacity:1;};
+    }
+    </style>
+</head>
+<body>
+	<!-- Swiper -->
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+				<img src="images/flower.png" style="width:57.5%;height:46.5%;z-index:999" class="ani"  swiper-animate-effect="bounceInLeft" swiper-animate-duration="1s" swiper-animate-delay="0s">
+				<img src="images/s1.png" style="width:100%;height:41.4%;top:29%" class="ani"  swiper-animate-effect="zoomIn" swiper-animate-duration="1s" swiper-animate-delay="0.5s">
+				<img src="images/s1-t2.png" style="width:31%;height:23.7%;left:22.7%;top:38.3%" class="ani"  swiper-animate-effect="zoomIn" swiper-animate-duration="1s" swiper-animate-delay="1.5s">
+				<img src="images/s1-t1.png" style="width:19.3%;height:23.7%;left:68.8%;top:38.1%" class="ani"  swiper-animate-effect="bounceInRight" swiper-animate-duration="1s" swiper-animate-delay="1s">
+				<img src="images/web-swipe-tip.png" style="width:8%;height:3%;left:46%;top:96%" class="down">
+            </div>
+            <div class="swiper-slide">
+            	<div class="bgcolor" style="width:66.8%;height:38.8%;position:absolute;left:7.1%;top:8.1%;border-radius:10px;background:rgba(255,255,255,0.7)"></div>
+            	<img src="images/s2-i4.png" style="width:58.7%;height:34%;top:10.4%;left:10.9%;" class="ani"  swiper-animate-effect="bounceInLeft" swiper-animate-duration="1.5s" swiper-animate-delay="0s">
+            	<img src="images/s2-i1.png" style="width:13.4%;height:40%;top:5.8%;left:77.3%;" class="ani"  swiper-animate-effect="bounceInUp" swiper-animate-duration="1.5s" swiper-animate-delay="0.8s">
+            	<img src="images/s2-i2.png" style="width:21.1%;height:45.8%;top:4.2%;left:73.9%;" class="ani"  swiper-animate-effect="bounceInDown" swiper-animate-duration="1.5s" swiper-animate-delay="1.5s">
+            	<img src="images/s2-i5.png" style="width:81.4%;height:36.8%;top:54.7%;left:10.2%;border-radius:15px" class="ani"  swiper-animate-effect="zoomIn" swiper-animate-duration="1.5s" swiper-animate-delay="2s">
+            	<img src="images/web-swipe-tip.png" style="width:8%;height:3%;left:46%;top:96%" class="down">
+            </div>
+            <div class="swiper-slide">
+				<div class="bgcolor" style="width:66.8%;height:38.8%;position:absolute;left:7.1%;top:8.1%;border-radius:10px;background:rgba(255,255,255,0.7)"></div>
+            	<img src="images/s3-i4.png" style="width:58.7%;height:34%;top:10.4%;left:10.9%;" class="ani"  swiper-animate-effect="bounceInLeft" swiper-animate-duration="1.5s" swiper-animate-delay="0s">
+            	<img src="images/s2-i1.png" style="width:13.4%;height:40%;top:5.8%;left:77.3%;" class="ani"  swiper-animate-effect="bounceInUp" swiper-animate-duration="1.5s" swiper-animate-delay="0.8s">
+            	<img src="images/s3-i2.png" style="width:21.1%;height:45.8%;top:4.2%;left:73.9%;" class="ani"  swiper-animate-effect="zoomIn" swiper-animate-duration="1.5s" swiper-animate-delay="1.5s">
+            	<img src="images/s3-i5.png" style="width:81.4%;height:36.8%;top:54.7%;left:10.2%;border-radius:15px" class="ani"  swiper-animate-effect="bounceInDown" swiper-animate-duration="1.5s" swiper-animate-delay="2s">
+            	<img src="images/web-swipe-tip.png" style="width:8%;height:3%;left:46%;top:96%" class="down">
+            </div>
+            <div class="swiper-slide">
+				<img src="images/flower.png" style="width:57.5%;height:46.5%;z-index:999" class="ani"  swiper-animate-effect="bounceInLeft" swiper-animate-duration="1.5s" swiper-animate-delay="0s">
+				<img src="images/s1.png" style="width:100%;height:41.4%;top:29%" class="ani"  swiper-animate-effect="zoomIn" swiper-animate-duration="1.5s" swiper-animate-delay="0.5s">
+				<img src="images/text.png" style="width:57.1%;height:24%;top:38.1%;left:33.5%" class="ani"  swiper-animate-effect="zoomIn" swiper-animate-duration="1.5s" swiper-animate-delay="1.5s">
+				<img src="images/web-swipe-tip.png" style="width:8%;height:3%;left:46%;top:96%" class="down">
+            </div>
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+    </div>
+
+    <!-- Swiper JS -->
+    <script src="js/swiper.min.js"></script>
+	<script src="js/swiper.animate1.0.2.min.js"></script>
+    <!-- Initialize Swiper -->
+    <script>
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        paginationClickable: true,
+        direction: 'vertical',
+        onInit: function(swiper){
+           swiperAnimateCache(swiper);
+           swiperAnimate(swiper);
+    },
+    onSlideChangeEnd: function(swiper){
+            swiperAnimate(swiper);
+    }  
+    });
+    </script>
+</body>
+</html>

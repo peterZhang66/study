@@ -1,0 +1,124 @@
+/* pages/searchpage/searchpage.wxss */
+page{
+      background:#EDEDED;
+      font-size: 11pt;
+}
+.search-box{
+      margin:20rpx 30rpx;
+      background:#fff;
+      height:35px;
+      border-radius: 5px;
+      overflow: hidden;
+    
+      display: flex;
+      align-items: center;
+}
+.search-box icon{
+      margin-left:10px;
+}
+.search-box input{
+      flex:1;
+      margin-left:5px;
+}
+.remove{
+      background:#FF7011;
+      color:#fff;
+      height:100%;
+      line-height: 35px;
+      padding:0 10px;
+}
+.search-content{
+      background:#fff;
+      padding:0 10px;
+}
+.search-content .item{
+      color:#333;
+      padding:10px 0;
+      font-size: 10pt;
+      border-bottom:1px solid #dfdfdf;
+}
+.search-content .item:last-child{
+      border:none;
+}
+.thiscity{
+     
+      color:#999;
+      font-size: 10pt;
+}
+.thiscity .title{
+       padding: 0 10px;
+}
+.btn-c{
+      background:#fff;
+     padding:  10px;
+      display: flex;
+      align-items: center;
+      margin-top:5px;
+      flex-wrap: wrap;
+}
+.search-btn{
+      width:33.33%;
+      text-align: center;
+      border:1px solid #dfdfdf;
+      padding:3px 0;
+      color:#333;
+}
+.btn{
+      width:33.33%;
+      text-align: center;
+      color:#333;
+      margin-bottom:15px;
+}
+.btn .text{
+      width:80%;
+      border:1px solid #dfdfdf;
+      border-radius: 5px;
+      font-size: 10pt;
+      padding:3px 0;
+}
+.title{
+       color:#999;
+      font-size: 10pt;
+        padding: 0 10px;
+        margin:10px 0;
+}
+.content{
+      display: flex;
+      flex-wrap: wrap;
+  background:#fff;
+        padding: 15px 20px 0 15px;
+}
+.head{
+      overflow: hidden;
+}
+.scroll-bg{
+      position: relative;
+}
+.right-btn{
+     position: fixed;
+      right:0;
+      bottom:0;
+     z-index: 999;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background:#fff;
+  
+}
+.right-btn .item{
+      flex:1;
+      color:#FF7011;
+      font-size: 10pt;
+      text-align: center;
+          width:20px;
+}
+.tit{
+      line-height: 30px;
+      background:#F9F9F9;
+      padding:0 10px;
+}
+.item{
+      display: flex;
+      
+}

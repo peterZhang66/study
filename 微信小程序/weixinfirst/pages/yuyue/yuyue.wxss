@@ -1,0 +1,15 @@
+/* pages/yuyue/yuyue.wxss */
+
+.teacherImg{width:630rpx;margin:50rpx auto 60rpx;height: 432rpx;border: 1px solid #eee;display: flex;align-items: center;justify-content: center;border-radius: 20rpx}
+.teacherImg image{width: 140rpx;height: 140rpx}
+.chooseBox{width:630rpx;border: 1px solid #eee;border-radius: 20rpx;margin:0 auto 120rpx;display: flex;flex-direction: column;
+justify-content: space-between;
+}
+.chooseBox li{height: 47px;width: 100%;border-bottom: 1px solid #eee;display: flex;justify-content:flex-start;
+  align-items: center;}
+  .chooseBox li view{width:90rpx}
+.chooseBox li image{width:48rpx;height: 50rpx;text-align: center;padding-left: 24rpx}
+.chooseBox li input{color: #000}
+.sendBtn{width:630rpx;border-radius: 20rpx;margin:0 auto;height: 90rpx;display: flex;color: #fff;background: red;justify-content: center}
+.chooseBox li .section{width:100%}
+.chooseBox li .section .picker{width: 100%}

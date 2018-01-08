@@ -1,0 +1,15 @@
+/* pages/xueshu/xueshu.wxss */
+.news{padding: 32rpx 16rpx;display: flex;flex-direction: column;}
+
+.author{display: flex;justify-content:space-between;align-items:center}
+.authorL{display: flex;justify-content: flex-start;align-items: center}
+.authorL image{margin-right: 20rpx}
+.author span{font-size: 24rpx;color: #808080}
+.news .content{height: 74rpx;line-height: 74rpx;}
+.authorImg{width:92rpx;height: 92rpx;}
+.newsImg{display: flex;justify-content: flex-start}
+.newsImg image{width:222rpx;height: 222rpx;margin-right: 12rpx}
+.loading{width:100%;height:50px;background: #ccc;text-align: center;line-height: 50px;position: fixed;top:50%;left:0}
+.zan_reply{border-bottom:1px solid #eee;display: flex;justify-content: flex-end;height: 64rpx;align-items: center;font-size: 24rpx;color: #808080}
+.zan image,.reply image{width:24rpx;height: 20rpx;margin-right: 10rpx}
+.zan,.pinglun{width:100rpx}

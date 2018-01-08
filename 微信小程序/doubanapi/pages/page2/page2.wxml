@@ -1,0 +1,8 @@
+<view wx:for = "{{all_info}}" wx:for-item = "movie_info">
+  <navigator url = "../page3/page3?requesturl={{movie_info.requestUrl}}" > {{movie_info.title}}</navigator> 
+  <view wx:for = "{{movie_info.movies}}" wx:for-item = "movie">
+    <text wx:if = "{{movie.title}}">{{movie.title}}</text>
+    <text wx:if = "{{movie.subject.title}}">{{movie.subject.title}}</text>
+  </view>
+  ----------------------------------------
+</view>

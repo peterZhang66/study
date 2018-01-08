@@ -1,0 +1,89 @@
+**1.公司开发微信小程序用私人账号吗?**
+- 微信者开发工具-->切换账号-->新建文件夹-->拷贝一份源码进去
+**2. 组件样式修改问题？**
+- 除了input
+**3. 尺寸问题**
+- 用ps缩放效果图590/750
+- image标签加等比例缩放属性
+**4. 导航问题**
+- 普通导航不要超过5个页面
+**5. 弹性盒子布局问题flex**
+- 上下左右居中一定要在所有父级中都写
+**6. 协同问题？**
+- 小到静态布局图片路径统一
+**7.https怎么用？**
+**8.backgroundTextStyl  下拉背景字体、loading 图的样式，仅支持 dark/light**
+**9.只是设置 app.json 中的 window 配置项的内容**
+**10.flex兼容性问题**
+- 移动兼容到 安卓4 ios7
+- 小程序完全不用兼容
+- 华为手机兼容有问题
+- PC端兼容性的问题，移动端配合autoprefixer可以让你玩得飞起了
+- 因为大家很少写新的framework啊. 多数情况:1. 是直接套用Bootstrap, Foundation等现成的framework. 2. Maintain 已经有的framework.至于兼容性, 那是原始开发人员考虑的, 后来的做的虾兵蟹将打打补丁就好了.
+- https://www.zhihu.com/question/56685652/answer/150577583
+**11.小程序事件传参??**
+- data-*自定义属性-->e.currentTarget
+**12. wepyjs 用于小程序中自定义开发组件**
+**13.一个页面中的双重tab切换滚动问题？**
+- http://blog.csdn.net/qq_31383345/article/details/52900835
+- 上面写tab切换的是傻逼，直接更改数据重新渲染页面就好了。
+**14.选项卡按需加载速度慢问题？**
+- if判断&&图片懒加载
+**15.小程序navigator url参数设置?**
+- 传值:在navigator的属性url后拼接?id(参数名字)=要传递的值 (如果多个参数用&分开 &name=value&…….)
+- 取值：options 是包含url地址中参数的对象，可以直接 点 获取。
+**16.js中传参**
+https://www.google.co.jp/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=%E5%8D%8E%E4%BC%81&*
+//获取地址栏中的参数
+function GetQueryString(name) {  
+    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");  
+    var r = window.location.search.substr(1).match(reg);  
+
+    if (r != null) {   
+        return unescape(r[2]);  
+    }  
+    return null;  
+}
+**17.本地资源无法通过 WXSS 获取?**
+- background-image：可以使用网络图片，或者 base64，或者使用<image/>标签
+GetQueryString('sourceid')//chrome-instant
+**18.图片的inline-block会有留白。**
+- vertical-align: middle;
+- display:block
+**19.杂记**
+- app.json 是对当前小程序的全局配置，包括了小程序的所有页面路径、界面表现、网络超时时间、底部 tab 等。
+- pages字段 —— 用于描述当前小程序所有页面路径，这是为了让微信客户端知道当前你的小程序页面定义在哪个目录。
+- 数组的第一项代表小程序的初始页面。小程序中新增/减少页面，都需要对 pages 数组进行修改。
+- window字段 —— 小程序所有页面的顶部背景颜色，文字颜色定义在这里的。
+是否开启下拉刷新  ,下拉背景字体、loading 图的样式，仅支持 dark/light
+- tabBar字段 --- 如果小程序是一个多 tab 应用（客户端窗口的底部或顶部有 tab 栏可以切换页面）
+当设置 position 为 top 时，将不会显示 icon
+- tabBar 中的 list 是一个数组，只能配置最少2个、最多5个 tab，tab 按数组的顺序排序。
+- networkTimeout --- 可以设置各种网络请求的超时时间。
+- debug ---- 可以在开发者工具中开启 debug 模式，在开发者工具的控制台面板，调试信息以 info 的形式给出，其信息有Page的注册，页面路由，数据更新，事件触发 。 可以帮助开发者快速定位一些常见的问题。
+- page.json  只是设置 app.json 中的 window 配置项的内容，页面中配置项会覆盖 app.json 的 window 中相同的配置项。
+- App() 函数用来注册一个小程序。接受一个 object 参数，其指定小程序的生命周期函数等。
+- 小程序的生命周期函数     可以在 App 的 onlaunch 和 onshow 中获取上述场景值
+- 全局的 getApp() 函数可以用来获取到小程序实例。
+js:
+- Page() 函数用来注册一个页面。接受一个 object 参数，其指定页面的初始数据、生命周期函数、事件处理函数等。
+- object 内容在页面加载时会进行一次深拷贝，需考虑数据大小对页面加载的开销
+- this.setData来获取data中的数据
+- 在小程序中所有页面的路由全部由框架进行管理。
+- 框架以栈的形式维护了当前的所有页面。 当发生路由切换的时候，页面栈的表现如下：
+
+初始化	        新页面入栈
+打开新页面	新页面入栈
+页面重定向	当前页面出栈，新页面入栈
+页面返回	页面不断出栈，直到目标返回页，新页面入栈
+Tab 切换	页面全部出栈，只留下新的 Tab 页面
+重加载	        页面全部出栈，只留下新的页面
+- getCurrentPages() 函数用于获取当前页面栈的实例，以数组形式按栈的顺序给出，第一个元素为首页，最后一个元素为当前页面。
+作用域:
+- 在 JavaScript 文件中声明的变量和函数只在该文件中有效；不同的文件中可以声明相同名字的变量和函数，不会互相影响。
+模块化:
+- 可以将一些公共的代码抽离成为一个单独的 js 文件，作为一个模块。模块只有通过 module.exports 或者 exports 才能对外暴露接口。
+-  require 暂时不支持绝对路径
+- 在需要使用这些模块的文件中，使用 require(path) 将公共代码引入
+API
+- 小程序开发框架提供丰富的微信原生 API，可以方便的调起微信提供的能力，如获取用户信息，本地存储，支付功能等。

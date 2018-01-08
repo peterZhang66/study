@@ -1,0 +1,14 @@
+/* index/index.wxss */
+.indexTop,.container,.slide-image,.img{width: 100%;height:324rpx;margin-bottom: 34rpx}
+#green{background: green;}
+#red{background: red;}
+#yellow{background: yellow;}
+#blue{background: blue; }
+.scroll-view-item{ height: 100px}
+.scroll-view-item_H{width: 200rpx; height:300rpx; display: inline-block;margin-left: 16rpx;}
+.section__title{height: 54rpx;line-height: 54rpx;font-size: 24rpx;font-weight: bold}
+.indexM .scroll-view-item_H{height:264rpx}
+/* .indexB{height:300rpx} */
+body,page{height: 100%}
+.section__title{padding-left: 16rpx;position: relative}
+.more{position: absolute;right: 10rpx;top:0;color: #13227a}

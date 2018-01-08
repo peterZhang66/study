@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<script type="text/javascript">
+
+	// 补零函数
+	function addZero (n) {
+		return n < 10 ? '0'+n : n;
+	}
+
+	// function addZero (n) {
+	// 	if (n < 10) {
+	// 		return '0'+n;
+	// 	} else {
+	// 		return n;
+	// 	}
+	// }
+
+	window.onload = function () {
+		var oH1 = document.getElementsByTagName('h1')[0];
+		// 先手动调用一次该函数
+		time();
+		setInterval(time,1000);
+		function time(){
+			var oDate = new Date();
+			var year = oDate.getFullYear();
+			var month = oDate.getMonth() + 1;
+			var date = oDate.getDate();
+			var hour = oDate.getHours();
+			var minutes = oDate.getMinutes();
+			var seconds = oDate.getSeconds();
+			// 保存时间的格式
+			var time = addZero(year)+'-'+addZero(month)+'-'+addZero(date)+' '+addZero(hour)+':'+addZero(minutes)+':'+addZero(seconds);
+
+			oH1.innerHTML = time;	
+		}
+	}
+	
+
+	</script>
+</head>
+<body>
+	<h1></h1>
+</body>
+</html>

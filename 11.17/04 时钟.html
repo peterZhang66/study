@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="1.css">
+</head>
+<body>
+	<div id="box">
+		<div id="hours"></div>
+		<div id="minutes"></div>
+		<div id="seconds"></div>
+		<div id="cap"></div>
+	</div>
+</body>
+</html>
+<script type="text/javascript">
+	// 秒针: 360 / 60 = 6deg
+	// 分针: 360 / 60 = 6deg
+	// 时针: 360 / 12 = 30deg
+	var oHours = document.getElementById('hours');
+	var oMinutes = document.getElementById('minutes');
+	var oSeconds = document.getElementById('seconds');
+
+	function ss() {
+		// 获取当前时间
+		var oDate = new Date();
+
+		var hours = oDate.getHours();
+		var minutes = oDate.getMinutes();
+		var seconds = oDate.getSeconds();
+
+		// 转化为对应的角度
+		// 60分钟 30deg  1分  30 / 60 = 0.5
+		oHours.style.transform = 'rotate('+(hours * 30 + minutes * 0.5)+'deg)';
+		// 60s 走 6deg  1秒 6 / 60  30  3deg
+		oMinutes.style.transform = 'rotate('+(minutes * 6 + seconds * 0.1)+'deg)';
+		oSeconds.style.transform = 'rotate('+(seconds * 6)+'deg)';
+	}
+	ss();
+	setInterval(ss,1000);
+</script>

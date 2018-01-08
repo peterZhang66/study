@@ -1,0 +1,11 @@
+/* pages/logs/logs.wxss */
+.footer{position: fixed;left:0;bottom: 0;display: flex;text-align: center;justify-content:space-between;width:100%;height:60px; align-items: center;}
+.footL,.footR{flex:2}
+.footC{width:140px;height: 37px;background: red;line-height: 37px;color: #fff;border-radius: 5px}
+.img{width:34px;height:30px}
+.footR{
+  display: flex;
+  justify-content:center;
+  align-items: center;
+}
+.footR view{width:40px;height: 40px;border-radius: 50%;border:1px solid red;line-height: 40px}

@@ -1,0 +1,10 @@
+1.https://www.zhihu.com/question/21213699
+2.在CSS中定义背景滚动方式的属性是backgroud-attacthment
+取值: scroll | fixed | inherit
+3.http://www.ruanyifeng.com/blog/2017/05/websocket.html?utm_source=tuicool&utm_medium=referral
+webscoket
+4.居中
+5.算命的，养鸡的，卖麻将桌的
+6.页面渲染呈现以及页面跳转逻辑都由前端负责
+promise、ajax
+ftp账号密码，数据库账号密码，

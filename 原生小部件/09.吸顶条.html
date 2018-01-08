@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			padding:0;
+			margin: 0;
+		}
+		#a1{
+			background:red;
+			text-align:center;
+			height:30px;
+			width:100%;
+		}
+		#a2{
+			background:red;
+			text-align:center;
+			height:30px;
+			display:none;
+		}
+	</style>
+	<script src="common.js"></script>
+	<script>
+	window.onload = function(){
+		var oDiv1 = document.getElementById('a1');
+		var oDiv2 = document.getElementById('a2');
+		var x2 = getPos(oDiv1).top;
+		window.onscroll = function(){	
+			var x1 = document.documentElement.scrollTop || document.body.scrollTop;
+			console.log(x1,x2);
+			if(x2 <= x1){
+				oDiv1.style.position = 'fixed';
+				oDiv1.style.top = 0 ;
+				oDiv2.style.display = 'block';
+			}
+			else{
+				oDiv1.style.position = 'relative'
+				oDiv1.style.top = 0 ;
+				oDiv1.style.left = 0 ;
+				oDiv2.style.display = 'none';
+			}
+		}
+
+	}
+	</script>
+</head>
+<body>
+	<h1>嘻嘻嘻嘻嘻嘻</h1><h1>嘻嘻嘻嘻嘻嘻</h1><h1>嘻嘻嘻嘻嘻嘻</h1><h1>嘻嘻嘻嘻嘻嘻</h1><h1>嘻嘻嘻嘻嘻嘻</h1><h1>嘻嘻嘻嘻嘻嘻</h1><h1>嘻嘻嘻嘻嘻嘻</h1><h1>嘻嘻嘻嘻嘻嘻</h1><h1>嘻嘻嘻嘻嘻嘻</h1><h1>嘻嘻嘻嘻嘻嘻</h1><h1>嘻嘻嘻嘻嘻嘻</h1><h1>嘻嘻嘻嘻嘻嘻</h1><h1>嘻嘻嘻嘻嘻嘻</h1><h1>嘻嘻嘻嘻嘻嘻</h1><h1>嘻嘻嘻嘻嘻嘻</h1><h1>嘻嘻嘻嘻嘻嘻</h1><h1>嘻嘻嘻嘻嘻嘻</h1><h1>嘻嘻嘻嘻嘻嘻</h1><h1>嘻嘻嘻嘻嘻嘻</h1><h1>嘻嘻嘻嘻嘻嘻</h1><h1>嘻嘻嘻嘻嘻嘻</h1><h1>嘻嘻嘻嘻嘻嘻</h1><h1>嘻嘻嘻嘻嘻嘻</h1><h1>嘻嘻嘻嘻嘻嘻</h1><h1>嘻嘻嘻嘻嘻嘻</h1><h1>嘻嘻嘻嘻嘻嘻</h1><h1>嘻嘻嘻嘻嘻嘻</h1><h1>嘻嘻嘻嘻嘻嘻</h1><h1>嘻嘻嘻嘻嘻嘻</h1><h1>嘻嘻嘻嘻嘻嘻</h1><h1>嘻嘻嘻嘻嘻嘻</h1><h1>嘻嘻嘻嘻嘻嘻</h1><h1>嘻嘻嘻嘻嘻嘻</h1><h1>嘻嘻嘻嘻嘻嘻</h1><h1>嘻嘻嘻嘻嘻嘻</h1><h1>嘻嘻嘻嘻嘻嘻</h1><h1>嘻嘻嘻嘻嘻嘻</h1>
+	<h1>嘻嘻嘻嘻嘻嘻</h1><h1>嘻嘻嘻嘻嘻嘻</h1><h1>嘻嘻嘻嘻嘻嘻</h1><h1>嘻嘻嘻嘻嘻嘻</h1><h1>嘻嘻嘻嘻嘻嘻</h1><h1>嘻嘻嘻嘻嘻嘻</h1><h1>嘻嘻嘻嘻嘻嘻</h1><h1>嘻嘻嘻嘻嘻嘻</h1><h1>嘻嘻嘻嘻嘻嘻</h1><h1>嘻嘻嘻嘻嘻嘻</h1><h1>嘻嘻嘻嘻嘻嘻</h1><h1>嘻嘻嘻嘻嘻嘻</h1><h1>嘻嘻嘻嘻嘻嘻</h1><h1>嘻嘻嘻嘻嘻嘻</h1><h1>嘻嘻嘻嘻嘻嘻</h1><h1>嘻嘻嘻嘻嘻嘻</h1><h1>嘻嘻嘻嘻嘻嘻</h1><h1>嘻嘻嘻嘻嘻嘻</h1><h1>嘻嘻嘻嘻嘻嘻</h1><h1>嘻嘻嘻嘻嘻嘻</h1><h1>嘻嘻嘻嘻嘻嘻</h1><h1>嘻嘻嘻嘻嘻嘻</h1><h1>嘻嘻嘻嘻嘻嘻</h1><h1>嘻嘻嘻嘻嘻嘻</h1><h1>嘻嘻嘻嘻嘻嘻</h1><h1>嘻嘻嘻嘻嘻嘻</h1><h1>嘻嘻嘻嘻嘻嘻</h1><h1>嘻嘻嘻嘻嘻嘻</h1><h1>嘻嘻嘻嘻嘻嘻</h1><h1>嘻嘻嘻嘻嘻嘻</h1><h1>嘻嘻嘻嘻嘻嘻</h1><h1>嘻嘻嘻嘻嘻嘻</h1><h1>嘻嘻嘻嘻嘻嘻</h1><h1>嘻嘻嘻嘻嘻嘻</h1><h1>嘻嘻嘻嘻嘻嘻</h1><h1>嘻嘻嘻嘻嘻嘻</h1><h1>嘻嘻嘻嘻嘻嘻</h1>
+	<div id="a1">这是吸顶条</div>
+	<div id="a2">这是吸顶条</div>
+	<h1>1嘻嘻嘻嘻嘻嘻</h1><h1>2嘻嘻嘻嘻嘻嘻</h1><h1>嘻嘻嘻嘻嘻嘻</h1><h1>嘻嘻嘻嘻嘻嘻</h1><h1>嘻嘻嘻嘻嘻嘻</h1><h1>嘻嘻嘻嘻嘻嘻</h1><h1>嘻嘻嘻嘻嘻嘻</h1><h1>嘻嘻嘻嘻嘻嘻</h1><h1>嘻嘻嘻嘻嘻嘻</h1><h1>嘻嘻嘻嘻嘻嘻</h1><h1>嘻嘻嘻嘻嘻嘻</h1><h1>嘻嘻嘻嘻嘻嘻</h1><h1>嘻嘻嘻嘻嘻嘻</h1><h1>嘻嘻嘻嘻嘻嘻</h1><h1>嘻嘻嘻嘻嘻嘻</h1><h1>嘻嘻嘻嘻嘻嘻</h1><h1>嘻嘻嘻嘻嘻嘻</h1><h1>嘻嘻嘻嘻嘻嘻</h1><h1>嘻嘻嘻嘻嘻嘻</h1><h1>嘻嘻嘻嘻嘻嘻</h1><h1>嘻嘻嘻嘻嘻嘻</h1><h1>嘻嘻嘻嘻嘻嘻</h1><h1>嘻嘻嘻嘻嘻嘻</h1><h1>嘻嘻嘻嘻嘻嘻</h1><h1>嘻嘻嘻嘻嘻嘻</h1><h1>嘻嘻嘻嘻嘻嘻</h1><h1>嘻嘻嘻嘻嘻嘻</h1><h1>嘻嘻嘻嘻嘻嘻</h1><h1>嘻嘻嘻嘻嘻嘻</h1><h1>嘻嘻嘻嘻嘻嘻</h1><h1>嘻嘻嘻嘻嘻嘻</h1><h1>嘻嘻嘻嘻嘻嘻</h1><h1>嘻嘻嘻嘻嘻嘻</h1><h1>嘻嘻嘻嘻嘻嘻</h1><h1>嘻嘻嘻嘻嘻嘻</h1><h1>嘻嘻嘻嘻嘻嘻</h1><h1>嘻嘻嘻嘻嘻嘻</h1>
+</body>
+</html>

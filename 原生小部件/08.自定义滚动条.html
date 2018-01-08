@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>自定义滚动条</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+		#box {
+			width: 170px;
+			background-color: red;
+			height: 480px;
+			margin: 10px auto;
+			overflow: hidden;
+			position: relative;
+		}
+		#box ul {
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
+		#box ul li {
+			width: 160px;
+			height: 160px;
+			border-bottom: 1px solid #ccc;
+		}
+		#box ul li img {
+			width: 160px;
+			height: 160px;
+			vertical-align: top;
+		}
+		#box #bar {
+			width: 8px;
+			position: absolute;
+			right: 1px;
+			top: 0;
+			height: 80px;
+			background-color: black;
+			border-radius: 4px;
+		} 
+	</style>
+	<script type="text/javascript" src="common.js"></script>
+	<script type="text/javascript">
+	ready(function(){
+		var oBox = document.getElementById('box');
+		var oUl = document.getElementById('ul1');
+		var oBar = document.getElementById('bar');
+		var x1 = 0;
+		var a1 = 0;
+		var max = oBox.offsetHeight - oBar.offsetHeight;
+		var max1 = oBox.offsetHeight - oUl.offsetHeight;
+		addMouseWheel(oBox,wheel);
+		function wheel(evt){
+			evt = evt || window.event;
+			if(isUp(evt)){
+				x1 -= 10
+				if(x1 <= 0){
+					x1 = 0; 
+				}
+			}else{
+				x1 +=10
+				if(x1 >= max){
+					x1 = max;
+				}
+			}
+			oBar.style.top = x1 + 'px';
+			var x2 = x1 * max1 / max;
+			oUl.style.top = x2 + 'px'; 
+		}
+		oBar.onmousedown = function(evt){
+			evt = evt || window.event;
+			a1 = evt.clientY - oBar.offsetTop
+			document.onmousemove = function(evt){
+				evt = evt || window.event;
+				var x1 = evt.clientY - a1 - getPos(oBox).top;
+				if(x1 <= 0){
+					x1 = 0;
+				} 
+				if(x1 >= max){
+					x1 = max;
+				}
+				oBar.style.top = x1 + 'px'
+				var x2 = x1 * max1 / max;
+				oUl.style.top = x2 + 'px'
+				return false;
+			}
+		document.onmouseup = function(){
+			document.onmousemove = null;
+		}
+		}		
+	})
+	</script>
+</head>
+<body>
+	<div id="box">
+		<ul id="ul1">
+			<li><img src="img/01.jpg" alt=""></li>
+			<li><img src="img/02.jpg" alt=""></li>
+			<li><img src="img/03.jpg" alt=""></li>
+			<li><img src="img/04.jpg" alt=""></li>
+			<li><img src="img/05.jpg" alt=""></li>
+			<li><img src="img/06.jpg" alt=""></li>
+			<li><img src="img/07.jpg" alt=""></li>
+		</ul>
+		<div id="bar"></div>
+	</div>
+</body>
+</html>

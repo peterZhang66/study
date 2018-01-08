@@ -1,0 +1,20 @@
+{
+  "pages": [
+   
+    "pages/page1/logs",
+    "pages/index/index",
+    "pages/friends/friends",
+    "pages/yuyue/yuyue",
+    "pages/teacher/teacher",
+    "pages/xueshu/xueshu",
+    "pages/demo/page/API/index"
+    
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#ff0000",
+    "navigationBarTitleText": "AAA学术圈",
+    "navigationBarTextStyle": "#fff",
+    "backgroundColor": "#ff0000"
+  }
+} 

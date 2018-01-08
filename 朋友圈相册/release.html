@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>发布</title>
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0,minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<link rel="stylesheet" href="__PUBLIC__/statics/css/swiper.min.css" />
+		<link rel="stylesheet" href="__PUBLIC__/statics/css/style.css" />
+		<style>
+		/*全屏swiper*/
+		 html, body {
+
+		        position: relative;
+		        height: 100%;
+		    }
+		    body {
+		        background: #eee;
+		        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+		        font-size: 14px;
+		        color:#000;
+		        margin: 0;
+		        padding: 0;
+		    }
+		    .swiper-container{
+		      /*display: none;*/
+		      /*position: fixed;*/
+		        width: 100%;
+		        height: 100%;
+		    }
+		    .swiper-slide {
+		        text-align: center;
+		        font-size: 18px;
+		        background: #fff;
+
+		        /* Center slide text vertically */
+		        display: -webkit-box;
+		        display: -ms-flexbox;
+		        display: -webkit-flex;
+		        display: flex;
+		        -webkit-box-pack: center;
+		        -ms-flex-pack: center;
+		        -webkit-justify-content: center;
+		        justify-content: center;
+		        -webkit-box-align: center;
+		        -ms-flex-align: center;
+		        -webkit-align-items: center;
+		        align-items: center;
+		    }
+		    .fu{
+					position: fixed;
+					top:0;
+					left:0;
+					background:rgba(000,000,000,.5);
+					display: none;
+					z-index: 99;
+					width:100%;
+					height:100%;
+				}
+				.fu img{
+					display: block;
+					max-width:100%;
+					height:auto;
+					position: absolute;
+					top:50%;
+					transform: translate(-50%,-50%);
+					left:50%;
+				}
+				.swiper-container{
+					position: fixed;
+					width:100%;
+					height:100%;
+					z-index: 99;
+					display: none;
+				}
+		</style>
+	</head>
+	<body>
+	<div class="swiper-container show">
+		<div class="swiper-wrapper">
+			
+		</div>
+	</div>
+	<div class='footbar'>
+		<a href="{:U('Index/index')}" class='item '>
+			<img src="__PUBLIC__/statics/images/1.png" alt="" class='footbar1'/>
+			<img src="__PUBLIC__/statics/images/2.png" alt="" class='footbar2'/>
+				<div>首页</div>
+		</a>
+		<a href="{:U('Index/release')}" class='item on'>
+			<img src="__PUBLIC__/statics/images/3.png" alt="" class='footbar1'/>
+			<img src="__PUBLIC__/statics/images/4.png" alt="" class='footbar2'/>
+				<div>精选</div>
+		</a>
+		<a href="{:U('Index/user')}" class='item'>
+			<img src="__PUBLIC__/statics/images/5.png" alt="" class='footbar1'/>
+			<img src="__PUBLIC__/statics/images/6.png" alt="" class='footbar2'/>
+				<div>个人中心</div>
+		</a>
+	</div>
+	<div class='body'>
+		<div class='search'>
+			<form action="{:U('Index/release_search')}" method="post">
+				<div class='search-box'>
+					<input type="text" name="content" placeholder="请输入您要查询的信息" value="{$content}" />
+					<input type="hidden" name="tid" value="{$tid}">
+					<img src="__PUBLIC__/statics/images/2017-11-23_165651.jpg" id="search" alt="" />
+				</div>
+			</form>
+		</div>
+		<div class='fb-box'>
+			<foreach name="type_list" item="vo">
+				<div class='item'>
+				<if condition="$tid eq $vo['id']">
+					<a href="{:U('Index/release',array('tid'=>$vo['id']))}" class='on'>{$vo.title}</a>
+				<else />
+					<a href="{:U('Index/release',array('tid'=>$vo['id']))}" >{$vo.title}</a>
+				</if>
+				</div>
+
+			</foreach>
+		</div>
+			<ul class='fb-content'>
+				<li class='fb-li'>
+				<foreach name="post_list" item="vo">
+				<div class='div'>
+					<a href="{:U('Index/post_detail',array('id'=>$vo['id']))}">
+						<div class='head-box'>
+							<div class='item1'>
+								<img src="{$vo.photo}" alt="" />
+							</div>
+							<div class='item2'>{$vo.username}</div>
+							<if condition="$vo.top eq 1">
+							<img src="__PUBLIC__/statics/images/zd.png" class='zd' alt="" />
+
+							<else />
+							</if>
+						</div>
+						
+							<div class='title'>{$vo.title}</div>
+							<div class='txt'>{$vo.info}</div>
+
+					</a>
+							<div class='img-box'>
+								<if condition="$vo.images neq ''">
+								<foreach name="vo.images" item="vo1">
+								<img src="__PUBLIC__/statics/images/{$vo1}" alt="" class='item'/>
+								</foreach>
+								<else />
+								</if>
+							</div>
+							
+				</div>
+							<div class='fb-foot'>
+								<div class='item'>
+									{$vo.add_time|date="m-d H:i",###}
+								</div>
+								<div class='item rt'>
+									<img src="__PUBLIC__/statics/images/ly.jpg" alt="" id1="{$vo.id}" class='textarea1'/>
+									<if condition="$vo.like eq 0">
+									<img src="__PUBLIC__/statics/images/font.png" alt="" id1="{$vo.id}" class='dz'/>
+									<else />
+									<img src="__PUBLIC__/statics/images/font2.png" alt="" id1="{$vo.id}" class='dz'/>
+									</if>
+									<!-- <img src="__PUBLIC__/statics/images/iii.png" alt="" /> -->
+								</div>
+							</div>
+							<if condition="$vo.comment_list neq ''">
+							<ul class="pl-box addcontent{$vo.id}">
+							
+							<!-- <foreach name="vo.comment_list" item="vo2">
+
+								<li>
+									{$vo2.username}：{$vo2.content}
+								</li>
+							</foreach>	 -->
+							</ul>
+							<else />
+							</if>
+					
+					</foreach>
+				
+				</li>
+			</ul>
+		
+		</div>
+		<div class='head-input-box'>
+			<input type="hidden" name="tid" value="">
+			<textarea name="content" id="content" rows="0" cols="0" ></textarea>
+			<button class='btn'>提交</button>
+		</div>
+		
+	</body>
+	<script src='__PUBLIC__/statics/js/jquery-1.11.3.js'></script>
+	<script src='__PUBLIC__/statics/js/swiper.min.js'></script>
+	
+	<script src='__PUBLIC__/statics/js/my.js'></script>
+	<script>
+	var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        paginationClickable: true,
+         init:false,
+    });
+	$('.img-box img').click(function(){
+		$('.swiper-container').show();
+		// 清空节点
+		$('.swiper-wrapper').html('');
+		// 获取所有父节点
+		var aImg = $(this).parent().children();
+		// 遍历copy到swiper-slide1中
+		var item='<div class="swiper-slide"><img style="width:100%;height:auto" src='+aImg[0].src+'></div>';
+		for (var i=1;i<aImg.length;i++) {
+			console.log(aImg[i].src)
+			 item += '<div class="swiper-slide"><img style="width:100%;height:auto" src='+aImg[i].src+'></div>';
+		}
+		$('.swiper-wrapper').append(item);
+		// 点击大图隐藏
+		$('.swiper-slide').click(function () {
+			$('.swiper-container').hide();
+		})
+		// console.log($(this).index())
+		// 用slideTo知道swiper当前图片
+		swiper.init();
+		swiper.slideTo($(this).index());
+		
+	});
+	$('#search').click(function(){
+				var content = $('input[name=content]').val();
+				if (content) {
+					$(this).parents('form').submit();
+				}else{
+					alert('请输入查询信息');
+				}
+				
+			});
+		// $('.dz').click(function(){
+			
+		// 	$(this).attr('src','__PUBLIC__/statics/images/font2.png');
+		// });
+		$('.textarea').click(function(e){
+			e.stopPropagation();
+			var tid = $(this).attr('id1');
+			$('input[name=tid]').val(tid);
+			$('.head-input-box').addClass('on')
+		});
+		$('.btn').click(function(){
+			var tid = $('input[name=tid]').val();
+			if (!tid) {
+				alert('系统错误');
+			}
+			var content = $('#content').val();
+			$.ajax({
+				type:'post',
+				url:"{:U('Index/ajaxSubcomment')}",
+				data:{tid:tid,content:content},
+				success:function(res){
+					if (res.code == '1') {
+						$('.addcontent'+tid).append("<li>"+res.data+'：'+content+"</li>");
+					}else{
+						alert(res);
+					}
+				}
+			});
+			$('.head-input-box').removeClass('on')
+		});
+		$(window).click(function(){
+			$('.head-input-box').removeClass('on')
+		});
+		$('.head-input-box').click(function(e){
+			e.stopPropagation();
+		});
+		//点赞
+		$('.dz').click(function(){
+			var tid = $(this).attr('id1');
+			var inp = $(this);
+			if (tid) {
+				$.ajax({
+					type:'post',
+					url:"{:U('Index/ajaxLike')}",
+					data:{tid:tid},
+					success:function(res){
+						if (res == 'success') {
+							inp.attr('src','__PUBLIC__/statics/images/font2.png');
+						}else{
+							alert(res);
+						}
+					}
+				});
+			}
+		});
+	</script>
+</html>

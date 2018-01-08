@@ -1,0 +1,104 @@
+﻿## 小程序如何响应鼠标事件
+- 在元素中自定义属性, 方法是 data-xxxx  
+- e.currentTarget.dataset.xxxx 来获取前台传过来的值
+
+## 组件
+- form 组件
+	- bindsubmit
+		- 可以通过submit的事件对象 e, 来获取form中各个控件的值. 例如:  e.detail.value.title; 
+##API 
+- var app = getApp() ; //获取当前的APP实例 {}
+- 在app下挂载一个属性: app.global.xxx
+- wx.login  : 登录
+- wx.getUserInfo: 获取用户信息
+- onShareAppMessage: 用户点击右上角的转发事件
+- wx.setNavigationBarTitle: 设置标题栏文本
+- wx.showNavigationBarLoading() 显示标题栏加载动画
+- wx.hideNavigationBarLoading() 隐藏标题栏加载动画
+- 下拉刷新: 
+	- 必须在json文件中,设置"enablePullDownRefresh": true. 才可以启用下拉刷新功能
+	- 事件名:onPullDownRefresh
+	- 强制停止刷新: wx.stopPullDownRefresh
+
+- wx.createAnimation : 创建一个动画实例
+	- 位移: translate: x\y轴像素值
+	- 旋转: rotate 0-360deg
+	- 斜切: skew  x轴的度数和y轴的度数
+	- 缩放: scale 100*100 1.1, 1.2
+- wx.showActionSheet : 显示菜单
+- wx.getNetworkType : 获取当前的网络状态
+- wx.getSystemInfo: 获取系统信息
+- wx.onAccelerometerChange
+- wx.onCompassChange
+- wx.makePhoneCall
+- wx.scanCode : 扫描二维码
+- 媒体, 位置, 数据: 作为课下作业独立完成. 
+
+## 注册一个github账号: 码农的入门身份证
+- 邮箱,姓名(昵称) 大气朴素
+
+## 微信小程序项目结构： 
+- 结构： WXML   index.wxml
+- 样式： WXSS   index.wxss
+- 页面逻辑： JS 
+- 配置数据： JSON  
+## 小程序的公共工具js文件
+- 抽出一个js文件作为模块
+- 用module.exprots = {}来暴露接口
+- 用require()来接收，不支持绝对路径 let Time = require('../../utils/util');
+
+## 微信小程序实例： 
+
+- 应用程序的顶级实例： new App()
+- 每一个页面： new Page()
+
+## 微信小程序的WXSS单位: 
+
+- 100px
+- rpx（responsive pixel）: 可以根据屏幕宽度进行自适应。规定屏幕宽为750rpx。
+
+## 微信小程序组件： 
+- view ： 类似于div
+- text： 文本组件 ， 有点类似p
+- image ： img 
+
+
+iPhone6 : 
+物理分辨率：1334*750（iphone6）
+逻辑分辨率：667 * 375
+width： 100%； width： 667px
+倍率： 2倍
+
+
+
+## 微信小程序API
+
+- wx.getSystemInfo
+- this.setData({
+ 
+});  做this.setData时， 如果，在回调函数内操作，回调函数一定要是箭头函数。 
+
+- wx.navigateTo
+	- url: 跳转路径
+- wx.redirectTo
+- wx.switchTab： 跳转特殊导航页
+- wx.showToast : 简单的弹出框（成功， 等待）
+
+
+- 数据排序： arr.sort(function(){
+
+});
+
+## 开发者ID(appID)
+- 登陆公众号--开发--基本配置--服务器配置(域名)
+- wx133939dd96ef0b6a
+- wx8803d8b782f26eb7
+## 小程序账号
+- 1330683447@qq.com   zp110117
+- 17600196554@163.com  dn110117
+## 对接企业微信公众账号
+- https://www.zhihu.com/question/54651557
+- 注册指南 https://mp.weixin.qq.com/debug/wxadoc/introduction/index.html?t=2017118
+## 对接域名
+## 添加小程序开发成员
+- 登陆公众平台-->用户身份-->添加开发者

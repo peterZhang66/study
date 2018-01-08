@@ -1,0 +1,33 @@
+<ul class="filter">
+  <li bindtap="change" data-sort="zhineng">
+    <image src='../images/Category{{filter.zhineng || "active"}}.png'></image>
+    <text class="{{filter.zhineng || 'active'}}">智能排序</text>
+  </li>
+  <li bindtap="change" data-sort="good">
+    <image  src='../images/good{{filter.good}}.png'></image>
+    <text class="{{filter.good}}">好评率</text>
+  </li>
+  <li bindtap="change" data-sort="data">
+    <image  src='../images/data{{filter.data}}.png'></image>
+    <text class="{{filter.data}}">学科</text>
+  </li>
+  <li bindtap="change" data-sort="Smile">
+    <image  src='../images/Smile{{filter.Smile}}.png'></image>
+    <text class="{{filter.Smile}}">颜值</text>
+  </li>
+</ul>
+<ul class="teacherItem">
+  <li wx:for="{{teachers}}" wx:for-index="index">
+  <view class="teacherImg">
+    <image src="{{item.avatar}}" bindtap='teacherDetail' id="{{item.id}}"></image>
+  </view>
+    
+    <view class="teacherTxt">
+    <text class="title">
+    <text class="txtL">{{item.name}}</text>
+    <text class="txtR">{{item.haoping}}%好评</text>
+    </text>
+    <text class="txt">{{item.intro}}</text>
+    </view>
+  </li>
+</ul>

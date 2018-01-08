@@ -1,0 +1,25 @@
+/* pages/friends/friends.wxss */
+.teacherItem li{border:2rpx solid #eee;width:100%;display: flex;justify-content:center; align-items: center;height: 320rpx;padding: 10px 0}
+.teacherItem li .teacherImg{width:232rpx;display: flex;justify-content:center; align-items: center;}
+.teacherItem li .teacherTxt{width:498rpx}
+.teacherItem li image{width:162rpx;height:162rpx;border-radius: 50%;}
+.teacherItem li .teacherTxt{display: flex;flex-direction: column;}
+.teacherTxt .title{height: 86rpx;font-size: 32rpx;line-height: 86rpx;width: 100%}
+.teacherTxt .title .txtL{float:left}
+.teacherTxt .title .txtR{float:right;font-size: 28rpx;color:#999;padding-right: 10px}
+.filter{display:flex;height: 116rpx;justify-content: space-around}
+.filter li{display: flex;flex-direction: column;justify-content: center;align-items: center}
+.filter li image{width:46rpx;height: 46rpx;margin-bottom: 10rpx}
+.active{color: red}
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,5 @@
+<!-- <view wx:for = "{{movies}}">
+{{item.title}}
+</view> -->
+
+<navigator url='../page2/page2'>跳</navigator>

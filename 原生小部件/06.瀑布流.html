@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+	*{
+		margin: 0;
+		padding:0;
+		list-style:none;
+	}
+		ul{
+			width:300px;
+			margin:50px;
+			border:1px solid #ccc;
+			float:left;
+		}
+		ul li{
+			width:260px;
+			margin:10px auto;
+		}
+	</style>
+	<script src="common.js"></script>
+	<script>
+	window.onload = function(){
+		var aUl = document.getElementsByTagName('ul');
+		createli();
+		function random(n,m){
+			return Math.floor(Math.random() * (m-n) + n);
+		}
+		//创建li
+		function createli(){
+			for(var i = 0; i < 20; i++){
+				var oLi = document.createElement('li');
+				oLi.style.height = random(200,600) + 'px';
+				oLi.style.background = 'rgb(' + random(0,256) + ',' + random(0,256) + ',' + random(0,256) + ')';
+				//创建数组
+				var arr = [];
+				//将为数组变为数组
+				for(var j = 0; j < aUl.length; j++){
+					//赋值
+					arr[j] = aUl[j];
+				} 
+				arr.sort(function (n1,n2){
+					return n1.offsetHeight - n2.offsetHeight;
+				})
+				arr[0].appendChild(oLi);
+			}
+		}
+		window.onscroll = function(){
+			var x1 = document.documentElement.scrollTop || document.body.scrollTop;
+			var x2 = document.documentElement.clientHeight || document.body.clientHeight;
+			var x = x1 + x2;
+			var x3 = document.documentElement.scrollHeight;
+			if(x3 <= x + 200){
+				createli();
+			}
+		}
+	}
+	</script>
+</head>
+<body>
+	<ul></ul>	
+	<ul></ul>	
+	<ul></ul>	
+</body>
+</html>

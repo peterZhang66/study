@@ -1,0 +1,28 @@
+<view wx:if="{{news.length <= 0}}">已没有更多数据...</view>
+<ul>
+  <li class="news" wx:for="{{news}}">
+    
+    <view class="author">
+      <view class="authorL">
+         <image src='{{item.avaImg}}' class="authorImg"></image>
+         <text>{{item.name}}</text>
+      </view>
+      <span>{{item.time}}</span>
+    </view>
+    <text class="content">{{item.text}}</text>
+    <view class="newsImg">
+       <image src='{{item.imgUrl}}'  wx:for="{{item.img}}"></image>
+    </view>
+    <view class="zan_reply">
+      <view class="zan">
+        <image src='../images/dianzan.png'></image>
+        <text>{{item.dianzanshu}}</text>
+      </view>
+      <view class="reply">
+        <image src='../images/pinglun.png'></image>
+        <text>{{item.pinglunshu}}</text>
+      </view>
+
+    </view>
+  </li>
+</ul>

@@ -1,0 +1,5 @@
+<view wx:for = "{{movies}}" class = "main">
+{{index}}{{item.title}}
+</view>
+
+<text wx:if = "{{!netToggle}}">不能加载更多了</text>

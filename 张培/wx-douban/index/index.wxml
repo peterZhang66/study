@@ -1,0 +1,56 @@
+<swiper indicator-dots="{{true}}"
+  autoplay="true" interval="2000" duration="{{duration}}" circular class="indexTop" indicator-active-color="#fff">
+  <block wx:for="{{imgUrls}}" class="container">
+    <swiper-item class="img">
+      <image src="{{item}}" class="slide-image" width="100%"/>
+    </swiper-item>
+  </block>
+</swiper>
+<!--横向不显示滚动条  -->
+<view class="section section_gap indexB ">
+  <view class="section__title">正在上映的电影
+    <navigator class="more" url="../list/list">更多>></navigator>
+  </view>
+  <scroll-view class="scroll-view_H" scroll-x="true"  style="width:100%;white-space: nowrap;"  scroll-left="{{scrollTop}}" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll">
+    <view   wx:for="{{in_theaters}}" style="display:inline-block">
+      <image src="{{item.images.small}}" class="scroll-view-item_H bc_green"></image>
+      <view style="display:flex;align-items:center;justify-content:center;font-size:28rpx">{{item.title}}</view>
+    </view>
+  </scroll-view>
+</view>
+<!--横向不显示滚动条  -->
+<view class="section section_gap indexB ">
+  <view class="section__title">即将上映的电影
+    <navigator class="more" url="../list/list">更多>></navigator>
+  </view>
+  <scroll-view class="scroll-view_H" scroll-x="true"  style="width:100%;white-space: nowrap;"  scroll-left="{{scrollTop}}" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll">
+    <view   wx:for="{{coming_soon}}" style="display:inline-block">
+      <image src="{{item.images.small}}" class="scroll-view-item_H bc_green"></image>
+      <view style="display:flex;align-items:center;justify-content:center;font-size:28rpx;width:200rpx;overflow:hidden">{{item.title}}</view>
+    </view>
+  </scroll-view>
+</view>
+<!--横向不显示滚动条  -->
+<view class="section section_gap indexB ">
+  <view class="section__title">口碑榜-北京
+    <navigator class="more" url="../list/list">更多>></navigator>
+  </view>
+  <scroll-view class="scroll-view_H" scroll-x="true"  style="width:100%;white-space: nowrap;"  scroll-left="{{scrollTop}}" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll">
+    <view   wx:for="{{us_box}}" style="display:inline-block">
+      <image src="{{item.subject.images.small}}" class="scroll-view-item_H bc_green"></image>
+      <view style="display:flex;align-items:center;justify-content:center;font-size:28rpx;width:200rpx;overflow:hidden">{{item.subject.title}}</view>
+    </view>
+  </scroll-view>
+</view>
+<!--横向不显示滚动条  -->
+<view class="section section_gap indexB ">
+  <view class="section__title">Top250-北京
+    <navigator class="more" url="../list/list">更多>></navigator>
+  </view>
+  <scroll-view class="scroll-view_H" scroll-x="true"  style="width:100%;white-space: nowrap;"  scroll-left="{{scrollTop}}" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll">
+    <view   wx:for="{{coming_soon}}" style="display:inline-block">
+      <image src="{{item.images.small}}" class="scroll-view-item_H bc_green"></image>
+      <view style="display:flex;align-items:center;justify-content:center;font-size:28rpx;width:200rpx;overflow:hidden">{{item.title}}</view>
+    </view>
+  </scroll-view>
+</view>

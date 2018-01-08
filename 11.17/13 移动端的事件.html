@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<style type="text/css">
+		div {
+			width: 200px;
+			height: 200px;
+			background-color: red;
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
+	</style>
+</head>
+<body>
+	<div></div>
+</body>
+</html>
+<script type="text/javascript" >
+	
+	var oBtn = document.getElementsByTagName('div')[0];
+	// 鼠标摁下记录的坐标
+	oBtn.addEventListener('touchstart',function (evt) {
+		// 取得事件发生时的位置的对象
+		var touch = evt.touches[0];
+		var x = touch.clientX - oBtn.offsetLeft;
+		var y = touch.clientY - oBtn.offsetTop;
+		// 移动坐标-摁下时候的坐标
+		oBtn.addEventListener('touchmove',function (evt) {
+			var touch = evt.touches[0];
+			var left = touch.clientX - x;
+			var top = touch.clientY - y;
+			oBtn.style.left = left + 'px';
+			oBtn.style.top = top + 'px';
+			// console.log(evt)
+		},false);
+		// console.log(touch)
+	},false);
+
+	// 清除移动事件
+	oBtn.addEventListener('touchend',function () {
+		console.log(3)
+	},false);
+</script>
